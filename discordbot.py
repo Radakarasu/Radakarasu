@@ -2,6 +2,16 @@ from discord.ext import commands
 import os
 import traceback
 
+
+@client.event
+async def on_ready():
+    while True:
+        if time.strftime('%H:%M:%S',time.localtime())=='08:28:00':
+            channel = client.get_channel('659233717826617355')
+            await client.send_message(channel, '勝手に喋るよ')
+            sleep(5)
+
+
 bot = commands.Bot(command_prefix='！')
 token = os.environ['DISCORD_BOT_TOKEN']
 
