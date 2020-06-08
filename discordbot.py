@@ -17,7 +17,7 @@ async def 井伊野ミコ(ctx):
     await ctx.send('あ、イイっすねー')
 
     
- @bot.command()
+@bot.command()
 async def 死ね(ctx):
     await ctx.send('は？')
     
@@ -86,6 +86,4 @@ async def goodbye(ctx):
 async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}http://moeimg.net/tag/%E3%83%AD%E3%83%AA")
 
-    
-    
 bot.run(token)
