@@ -14,8 +14,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def 確認(ctx):
-    await ctx.OK('pong')
+async def yaa(ctx):
+    await ctx.send('doaa')
 
 
 bot.run(token)
