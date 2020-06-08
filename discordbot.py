@@ -16,6 +16,7 @@ async def ping(ctx):
 async def neko(ctx):
     await ctx.send('にゃーん')
 
+    
 @bot.command(name="やぁ")
 async def hello(ctx):
     await ctx.send(f"よぉ、{ctx.message.author.name}！")   
