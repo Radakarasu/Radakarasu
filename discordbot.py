@@ -2,7 +2,7 @@ from discord.ext import commands
 import os
 import traceback
 
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(command_prefix='！')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
@@ -13,7 +13,17 @@ async def ping(ctx):
 
     
 @bot.command()
-async def neko(ctx):
+async def 井伊野ミコ(ctx):
+    await ctx.send('あ、イイっすねー')
+
+    
+ @bot.command()
+async def 死ね(ctx):
+    await ctx.send('は？')
+    
+    
+@bot.command()
+async def ねこ(ctx):
     await ctx.send('にゃーん')
 
     
@@ -77,4 +87,13 @@ async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}http://moeimg.net/tag/%E3%83%AD%E3%83%AA")
 
     
+    
+@client.event
+async def on_ready():
+    asyncio.ensure_future(greeting_gm())
+
+async def greeting_gm():
+    await client.send_message(channel, 'おはよう')
+    await asyncio.sleep(10)
+  
 bot.run(token)
