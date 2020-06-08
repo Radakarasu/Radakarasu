@@ -14,8 +14,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def やぁ(ctx):
-    await ctx.send('よぉ')
+async def youtube(ctx):
+    await ctx.send('{ctx.message.author.name}https://www.youtube.com/?gl=JP')
 
 
 bot.run(token)
