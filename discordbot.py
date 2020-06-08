@@ -86,4 +86,13 @@ async def goodbye(ctx):
 async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}http://moeimg.net/tag/%E3%83%AD%E3%83%AA")
 
+    
+@tasks.loop(seconds=60)
+async def loop():
+    # 現在の時刻
+    now = datetime.now().strftime('%H:%M')
+    if now == '08:04':
+        channel = client.get_channel(CHANNEL_ID)
+        await channel.send('テストログです')    
+        
 bot.run(token)
