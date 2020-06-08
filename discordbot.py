@@ -6,18 +6,6 @@ bot = commands.Bot(command_prefix='！')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-@tasks.loop(seconds=60)
-async def loop():
-    # 現在の時刻
-    now = datetime.now().strftime('%H:%M')
-    if now == '08:15':
-        channel = client.get_channel(CHANNEL_ID)
-        await channel.send('テストログです')  
-
-#ループ処理実行
-loop.start()
-
-
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
