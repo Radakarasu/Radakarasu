@@ -22,5 +22,70 @@ async def ping(ctx):
 async def やぁ(ctx):
     await ctx.send('よぉ')     
 
+    
+ @bot.command()
+async def やぁ(ctx):
+    await ctx.send('よぉ')      
 
+    
+@bot.command()
+async def 死ね(ctx):
+    await ctx.send('は？')
+
+
+@bot.command()
+async def ねこ(ctx):
+    await ctx.send('にゃーん')
+
+
+@bot.command(name="やぁ")
+async def hello(ctx):
+    await ctx.send(f"よぉ、{ctx.message.author.name}！")
+
+
+@bot.command(name="pornhub")
+async def hello(ctx):
+    await ctx.send(f"{ctx.message.author.name}https://jp.pornhub.com/")
+
+
+@bot.command(name="youtube")
+async def hello(ctx):
+    await ctx.send(f"{ctx.message.author.name}https://www.youtube.com/?gl=JP")
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 bot.run(token)
