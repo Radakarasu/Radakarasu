@@ -51,6 +51,19 @@ async def answer(ctx,arg):
         await ctx.send(f'{ctx.author.mention} ぶっぶー！ **'+ str(cnt) +'** 文字あってるにゃ')        
         
         
+@bot.command(aliases=['s'])
+async def start(ctx):
+    global current_ans
+    global current_ques
+    if current_ans =='':
+        await ctx.send('DMに`/q`で問題を送るにゃ')
+    else:
+        text = sorted(current_ans)
+        if current_ques == '':
+            current_ques = ''.join()
+        await ctx.send('問題は **'+ current_ques +'** だにゃ')        
+    
+    
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
