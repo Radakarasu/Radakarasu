@@ -23,11 +23,6 @@ async def やぁ(ctx):
     await ctx.send('よぉ')     
 
     
- @bot.command()
-async def やぁ(ctx):
-    await ctx.send('よぉ')      
-
-    
 @bot.command()
 async def 死ね(ctx):
     await ctx.send('は？')
@@ -50,42 +45,7 @@ async def hello(ctx):
 
 @bot.command(name="youtube")
 async def hello(ctx):
-    await ctx.send(f"{ctx.message.author.name}https://www.youtube.com/?gl=JP")
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    await ctx.send(f"{ctx.message.author.name}https://www.youtube.com/?gl=JP")  
     
     
 bot.run(token)
