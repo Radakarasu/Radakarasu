@@ -17,10 +17,7 @@ async def loop():
     now = datetime.now().strftime('%H:%M')
     if now == '20:52':
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('おはよう')  
-
-#ループ処理実行
-loop.start()    
+        await channel.send('おはよう')    
         
         
 @bot.command()
@@ -62,4 +59,5 @@ async def 同人(ctx):
 async def おすすめ(ctx):
     await ctx.send('https://jp.pornhub.com/video/search?search=%E6%97%A5%E6%9C%AC%E4%BA%BA%E3%81%8A%E3%81%99%E3%81%99%E3%82%81')   
 
+loop.start()  
 bot.run(token)
