@@ -28,6 +28,29 @@ async def question_error(ctx,error):
         await ctx.send(f'{ctx.author.mention}`/q`はDM限定だにゃー')
 
 
+@bot.command(aliases=['a'])
+async def answer(ctx,arg):
+    global current_ans
+    global current_ques
+    listed_arg = list(arg)
+    if current_ans == '':
+        await ctx.send('DMに`/q`で問題を送るにゃ')
+    elif arg == current_ans:
+        current_ans = ''
+        current_ques = ''
+        if not answer_set.empty():
+            current_ans = answer_set.get()
+        await ctx.send(f'{ctx.author.mention} 正解だにゃ')
+    elif len(current_ans) != len(listed_arg):
+        await ctx.send(f'{ctx.author.mention} ぶっぶー！長さが違うにゃ')
+    else:
+        cnt = 0
+        for i in range(len(current_ans)):
+            if current_ans[i] == listed_arg[i]:
+                cnt+=1
+        await ctx.send(f'{ctx.author.mention} ぶっぶー！ **'+ str(cnt) +'** 文字あってるにゃ')        
+        
+        
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
