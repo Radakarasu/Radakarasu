@@ -6,16 +6,6 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-async def greet():
-    channel = client.get_channel(CHANNEL_ID)
-    await channel.send('おはよう！')
-
-# bot起動時に実行されるイベントハンドラを定義
-@client.event
-async def on_ready():
-    await greet() # 挨拶する非同期関数を実行
-
-
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
