@@ -50,7 +50,7 @@ async def answer(ctx,arg):
                 cnt+=1
         await ctx.send(f'{ctx.author.mention} ぶっぶー！ **'+ str(cnt) +'** 文字あってるにゃ')        
         
-        
+ # /start または /s と発言したらスタートする処理
 @bot.command(aliases=['s'])
 async def start(ctx):
     global current_ans
@@ -61,9 +61,9 @@ async def start(ctx):
         text = sorted(current_ans)
         if current_ques == '':
             current_ques = ''.join()
-        await ctx.send('問題は **'+ current_ques +'** だにゃ')        
-    
-    
+        await ctx.send('問題は **'+ current_ques +'** だにゃ')       
+        
+        
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
