@@ -49,8 +49,7 @@ async def answer(ctx,arg):
         for i in range(len(current_ans)):
             if current_ans[i] == listed_arg[i]:
                 cnt+=1
-        await ctx.send(f'{ctx.author.mention} ぶっぶー！ **'+ str(cnt) +'** 文字あってるにゃ')
-        
+        await ctx.send(f'{ctx.author.mention} ぶっぶー！ **'+ str(cnt) +'** 文字あってるにゃ')      
 # /start または /s と発言したらスタートする処理
 @bot.command(aliases=['s'])
 async def start(ctx):
