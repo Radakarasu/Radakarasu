@@ -6,20 +6,8 @@ from datetime import datetime
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-CHANNEL_ID = 659232515319529480 #チャンネルID
-# 接続に必要なオブジェクトを生成
-client = discord.Client()
-        
-        
-    @tasks.loop(seconds=10)
-async def loop():
-    # 現在の時刻
-    now = datetime.now().strftime('%H:%M')
-    if now == '20:52':
-        channel = client.get_channel(CHANNEL_ID)
-        await channel.send('おはよう')    
-        
-        
+
+
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
@@ -58,6 +46,5 @@ async def 同人(ctx):
 @bot.command()
 async def おすすめ(ctx):
     await ctx.send('https://jp.pornhub.com/video/search?search=%E6%97%A5%E6%9C%AC%E4%BA%BA%E3%81%8A%E3%81%99%E3%81%99%E3%82%81')   
-
-loop.start()  
+ 
 bot.run(token)
