@@ -6,11 +6,6 @@ import traceback
 bot = commands.Bot(command_prefix='！')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-@bot.event
-async def on_ready():
-    # 起動したらターミナルにログイン通知が表示される
-    print('オナネタ紹介の準備が完了しました\n')
-    pass
 
 @bot.command()
 async def ping(ctx):
