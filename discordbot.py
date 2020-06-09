@@ -6,6 +6,12 @@ import traceback
 bot = commands.Bot(command_prefix='！')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+@bot.event
+async def on_ready():
+    # 起動したらターミナルにログイン通知が表示される
+    print('オナネタ紹介の準備が完了しました\n')
+    pass
+
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
@@ -84,5 +90,11 @@ async def goodbye(ctx):
 @bot.command(name="ロリ")
 async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}http://moeimg.net/tag/%E3%83%AD%E3%83%AA")
+    
+    
+ @bot.command(name="エロ")
+async def goodbye(ctx):
+    await ctx.send(f"https://jp.pornhub.com/")
+   
 
 bot.run(token)
