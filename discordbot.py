@@ -12,7 +12,7 @@ async def ping(ctx):
 
     
 @bot.command()
-async def 井伊野ミコ(ctx):
+async def 井伊野(ctx):
     await ctx.send('あ、イイっすねー')
 
     
@@ -61,12 +61,12 @@ async def goodbye(ctx):
     await ctx.send(f"り、り、リンカーン！")
 
     
-@bot.command(name="おすすめオナネタ")
+@bot.command(name="おすすめ")
 async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}https://jp.pornhub.com/video/search?search=%E6%97%A5%E6%9C%AC%E4%BA%BA%E3%81%8A%E3%81%99%E3%81%99%E3%82%81")
 
     
-@bot.command(name="二次エロ")
+@bot.command(name="二次")
 async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}http://buhidoh.net/archives")
 
@@ -81,7 +81,7 @@ async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}https://www.youtube.com/channel/UCNMG8dXjgqxS94dHljP9duQ")
 
     
-@bot.command(name="二次ロリ")
+@bot.command(name="ロリ")
 async def goodbye(ctx):
     await ctx.send(f"{ctx.message.author.name}http://moeimg.net/tag/%E3%83%AD%E3%83%AA")
 
