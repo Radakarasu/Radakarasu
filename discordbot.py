@@ -33,6 +33,16 @@ async def ロリ(ctx):
     
 @bot.command()
 async def 手マン(ctx):
-    await ctx.send('https://jp.pornhub.com/video/search?search=%E6%89%8B%E3%83%9E%E3%83%B3')     
+    await ctx.send('https://jp.pornhub.com/video/search?search=%E6%89%8B%E3%83%9E%E3%83%B3')  
     
+    
+@bot.command()
+async def 同人(ctx):
+    await ctx.send('http://buhidoh.net/archives')  
+       
+        
+@bot.command()
+async def おすすめ(ctx):
+    await ctx.send('https://jp.pornhub.com/video/search?search=%E6%97%A5%E6%9C%AC%E4%BA%BA%E3%81%8A%E3%81%99%E3%81%99%E3%82%81')   
+
 bot.run(token)
