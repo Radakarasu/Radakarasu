@@ -1,10 +1,24 @@
 from discord.ext import commands
 import os
 import traceback
+import tasks
 
 
 bot = commands.Bot(command_prefix='！')
 token = os.environ['DISCORD_BOT_TOKEN']
+CHANNEL_ID = 659232515319529480 #チャンネルID
+
+
+@tasks.loop(seconds=60)
+async def loop():
+    # 現在の時刻
+    now = datetime.now().strftime('%H:%M')
+    if now == '17:46':
+        channel = client.get_channel(CHANNEL_ID)
+        await channel.send('おはよう')  
+
+#ループ処理実行
+loop.start()
 
 
 @bot.command()
