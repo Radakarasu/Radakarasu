@@ -1,9 +1,31 @@
 from discord.ext import commands
 import os
 import traceback
+import queue
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+answer_set = queue.Queue(maxsize=30)
+current_ans =''
+current_ques = ''
+
+@bot.command(aliases=['q'])
+@commands.dm_only() # DM以外でこのコマンドを入力するとエラーを吐く
+async def question(ctx,arg):
+    global current_ans
+    if answer_set.full():
+        await ctx.send('キューがいっぱいだにゃ')
+    else:
+        answer_set.put(arg.replace(' ','_'))
+        if current_ans == '':
+            current_ans = answer_set.get()
+        await ctx.send('問題を受け付けたにゃ')
+
+# エラーの処理
+@question.error
+async def question_error(ctx,error):
+    if isinstance(error, commands.errors.PrivateMessageOnly):
+        await ctx.send(f'{ctx.author.mention}`/q`はDM限定だにゃー')
 
 
 @bot.command()
